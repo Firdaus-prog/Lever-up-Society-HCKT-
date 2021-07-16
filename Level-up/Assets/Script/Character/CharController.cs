@@ -7,7 +7,7 @@ public class CharController : MonoBehaviour
 
     [SerializeField]
     float moveSpeed = 20f;
-    public GameObject mainChar;
+    public GameObject mainChar, cameraPos;
 
     Vector3 forward, right;
     void Start()
@@ -38,6 +38,8 @@ public class CharController : MonoBehaviour
         Vector3 upMovement = forward * moveSpeed * Time.deltaTime * Input.GetAxis("VerticalKey");
 
         Vector3 heading = Vector3.Normalize(rightMovement + upMovement);
+
+
 
         transform.forward = heading;
         transform.position += rightMovement;
