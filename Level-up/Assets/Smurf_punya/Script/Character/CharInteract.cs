@@ -7,6 +7,7 @@ public class CharInteract : MonoBehaviour
     //public AudioSource interact;
     public GameObject tableButton, bedButton;
     public Collider mainBody;
+    public static int money, exp, lvl;
 
     void OnTriggerEnter(Collider other)
     {
