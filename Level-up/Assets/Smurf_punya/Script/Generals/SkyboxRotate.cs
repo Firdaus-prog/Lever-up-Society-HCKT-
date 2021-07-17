@@ -6,6 +6,6 @@ public class SkyboxRotate : MonoBehaviour
 {  
     void Update()
     {
-        RenderSettings.skybox.SetFloat("_Rotation", Time.time * 50f);
+        RenderSettings.skybox.SetFloat("_Rotation", Time.time * 3.1f);
     }
 }
