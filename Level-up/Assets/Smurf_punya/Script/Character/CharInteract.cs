@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TableUsed : MonoBehaviour
+public class CharInteract : MonoBehaviour
 {
     //public AudioSource interact;
 
     void OnTriggerEnter(Collider other)
     {
         //interact.Play();
-        if (other.tag == "Character")
+        if (other.tag == "Table")
         {
             Debug.Log("Use Table");
         }
@@ -27,4 +27,3 @@ public class TableUsed : MonoBehaviour
 
     }
 }
-
