@@ -20,6 +20,7 @@ public class CharController : MonoBehaviour
 
     void Update()
     {
+        
         if(Input.anyKey)
         {
             Move();
