@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Smurf_punya/Scenes/MainMenu.unity
+    guid: 8ebb13911c2e99d47b921fc032771cf9
+  - enabled: 1
+    path: Assets/Khalid_punya/Khalid_Scene/Room.unity
+    guid: 0231f7640c771624594c84356a7e8f20
   m_configObjects: {}
