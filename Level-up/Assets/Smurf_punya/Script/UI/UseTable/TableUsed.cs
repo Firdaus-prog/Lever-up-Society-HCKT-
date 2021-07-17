@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class TableUsed : MonoBehaviour
 {
-    public AudioSource interact;
+    //public AudioSource interact;
 
     void OnTriggerEnter(Collider other)
     {
-        interact.Play();
+        //interact.Play();
         if (other.tag == "Character")
         {
             Debug.Log("Use Table");

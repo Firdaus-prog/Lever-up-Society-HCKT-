@@ -7,7 +7,7 @@ public class CharController : MonoBehaviour
 
     [SerializeField]
     float moveSpeed = 20f;
-    public GameObject mainChar, cameraPos;
+    public GameObject mainChar;
 
     Vector3 forward, right;
     void Start()
