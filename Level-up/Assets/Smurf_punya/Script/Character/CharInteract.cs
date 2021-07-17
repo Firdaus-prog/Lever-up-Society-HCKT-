@@ -5,6 +5,8 @@ using UnityEngine;
 public class CharInteract : MonoBehaviour
 {
     //public AudioSource interact;
+    public GameObject tableButton, bedButton;
+    public Collider mainBody;
 
     void OnTriggerEnter(Collider other)
     {
@@ -12,18 +14,53 @@ public class CharInteract : MonoBehaviour
         if (other.tag == "Table")
         {
             Debug.Log("Use Table");
+            ShowButton(tableButton);
+        }
+        else if(other.tag == "Bed")
+        {
+            Debug.Log("Use Bed");
+            ShowButton(bedButton);
+        }
+        else  if(other.tag == "Outside")
+        {
+            Debug.Log("OutSide");
+            CloseButton(tableButton);
+            CloseButton(bedButton);
         }
         
-        
-        //StartCoroutine(Score(other));
-        //other.gameObject.SetActive(false);
-
     }
 
-    IEnumerator Score(Collider i)
+    public void ShowButton(GameObject button)
     {
-        yield return new WaitForSeconds(0.1f);
-        i.gameObject.SetActive(false);
+        if(button != null)
+        {
+            Animator animator = button.GetComponent<Animator>();
+            if(animator != null)
+            {
+                bool isOpen = animator.GetBool("show");
+                animator.SetBool("show", !isOpen);
+            }
+        }
+    }
+
+    public void CloseButton(GameObject button)
+    {
+        if(button != null)
+        {
+            Animator animator = button.GetComponent<Animator>();
+            if(animator != null)
+            {
+                animator.SetBool("show", true);
+            }
+        }
+    }
+
+    void Start()
+    {
+        CloseButton(tableButton);
+        
 
     }
+
+
 }
