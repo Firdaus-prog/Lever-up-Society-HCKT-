@@ -7896,11 +7896,6 @@ Transform:
   m_Father: {fileID: 1428835149}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &526599743 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1608010583022100, guid: 4d296a7a4fab4d6418164fb23e24e6ba, type: 3}
-  m_PrefabInstance: {fileID: 1456553209}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &526599745 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4267686971339892, guid: 4d296a7a4fab4d6418164fb23e24e6ba, type: 3}
@@ -8254,8 +8249,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffe103f774dbcc04397156c498e22daf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  placeableObjectPrefab: {fileID: 526599743}
-  newObjectHotKey: 257
+  placeableLamp: {fileID: 0}
+  placeableBed: {fileID: 0}
+  placeableDresser: {fileID: 0}
+  placeableClock: {fileID: 0}
+  LampObjectHotKey: 103
+  BedObjectHotKey: 104
+  CabinetObjectHotKey: 107
+  ClockObjectHotKey: 108
 --- !u!4 &531703582
 Transform:
   m_ObjectHideFlags: 0
@@ -9272,7 +9273,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &622153642
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9524,7 +9525,7 @@ GameObject:
   - component: {fileID: 647177016}
   - component: {fileID: 647177015}
   m_Layer: 5
-  m_Name: CroffFade(Canvas)
+  m_Name: CrossFade(Canvas)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14147,6 +14148,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1022528558}
+  - component: {fileID: 1022528559}
   m_Layer: 0
   m_Name: GlobalScripts
   m_TagString: Untagged
@@ -14168,6 +14170,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1022528559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1022528557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd635d88b8d421c4285b49f12315f179, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transition: {fileID: 647177015}
+  transitionTime: 1
 --- !u!1 &1024512760
 GameObject:
   m_ObjectHideFlags: 0
@@ -24996,7 +25012,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1643929244}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1022528559}
+        m_TargetAssemblyTypeName: UseObject, Assembly-CSharp
+        m_MethodName: OpenTable
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1643929244
 MonoBehaviour:
   m_ObjectHideFlags: 0

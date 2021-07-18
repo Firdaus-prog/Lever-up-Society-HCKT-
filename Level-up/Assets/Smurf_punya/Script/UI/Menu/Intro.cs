@@ -19,10 +19,11 @@ public class Intro : MonoBehaviour
         yield return new WaitForSeconds(3f);
         mainLogo.SetActive(false);
         splashBackground.GetComponent<Animator>().Play("SplashFadeOut");
+        bgm.SetActive(true);
         yield return new WaitForSeconds(1.0f);
         introAudio.SetActive(false);
         splashBackground.SetActive(false);
-        bgm.SetActive(true);
+        
         mainMenu.SetActive(true);
     }
 
