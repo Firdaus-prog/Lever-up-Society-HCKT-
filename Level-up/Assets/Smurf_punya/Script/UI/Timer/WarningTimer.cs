@@ -11,7 +11,7 @@ public class WarningTimer : MonoBehaviour
     public GameObject Panel;
     void Start()
     {
-        
+        //Panel.gameObject.SetActive(false);
     }
 
     void Update()
@@ -22,7 +22,7 @@ public class WarningTimer : MonoBehaviour
         if (timetoWait < 0)
         {
             Panel.gameObject.SetActive(true);
-            
+
             if(timeValue > 0)
             {
             timeValue -= Time.deltaTime;
