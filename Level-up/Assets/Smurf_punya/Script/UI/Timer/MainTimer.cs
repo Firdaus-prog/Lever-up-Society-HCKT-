@@ -14,6 +14,7 @@ public class MainTimer : MonoBehaviour
     public bool timeControl = true;
     public float transitionTime = 0.8f;
     public int moneyGain, expGain;
+    public AudioSource finishTimer;
 
     void Start()
     {
@@ -45,6 +46,7 @@ public class MainTimer : MonoBehaviour
                 Debug.Log("time end");
                 timeControl = false;
                 timeValue = setTime;
+                finishTimer.Play();
             }
         }
 
