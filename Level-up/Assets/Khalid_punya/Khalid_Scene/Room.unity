@@ -1924,6 +1924,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 118184139}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &121990639 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1608010583022100, guid: 4d296a7a4fab4d6418164fb23e24e6ba, type: 3}
+  m_PrefabInstance: {fileID: 1456553209}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &125811760
 GameObject:
   m_ObjectHideFlags: 0
@@ -8766,10 +8771,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffe103f774dbcc04397156c498e22daf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  placeableLamp: {fileID: 0}
-  placeableBed: {fileID: 0}
+  placeableLamp: {fileID: 121990639}
+  placeableBed: {fileID: 158791632}
   placeableDresser: {fileID: 0}
-  placeableClock: {fileID: 0}
+  placeableClock: {fileID: 3181217966219474152, guid: 1707b15fac9ac334e9b6d2d05fbd5411, type: 3}
   LampObjectHotKey: 103
   BedObjectHotKey: 104
   CabinetObjectHotKey: 107

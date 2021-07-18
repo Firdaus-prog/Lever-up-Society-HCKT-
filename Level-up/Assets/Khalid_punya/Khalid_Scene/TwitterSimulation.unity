@@ -676,8 +676,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38227300dc0385243ae7e14e15522fac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeValue: 20
+  timeValue: 5
   timetoWait: 5
+  returnTimeToRoom: 3
   timeText: {fileID: 1405326787}
   Panel: {fileID: 1754683113}
 --- !u!65 &1314946766
