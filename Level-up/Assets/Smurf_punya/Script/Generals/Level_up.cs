@@ -5,8 +5,7 @@ using UnityEngine.UI;
 
 public class Level_up : MonoBehaviour
 {
-    int level;
-    int experience;
+    
     int experienceNeededtoLevelUp;
 
     public Slider levelUpBar;
@@ -19,16 +18,14 @@ public class Level_up : MonoBehaviour
     void Start()
     {
         // Initialize the level and experience value
-        level = 0;
-        experience = 0;
 
         // You will need 10 exp to level up to the next Level (in this case)
-        experienceNeededtoLevelUp = 10;
+        experienceNeededtoLevelUp = 100;
 
-        levelUpBar.value = experience;
+        levelUpBar.value = Global_Value.expValue;
         levelUpBar.maxValue = experienceNeededtoLevelUp;
 
-        currentLevel.text = "Lvl : 1";
+        currentLevel.text = Global_Value.lvlValue.ToString();
     }
 
     // Update is called once per frame
@@ -36,12 +33,9 @@ public class Level_up : MonoBehaviour
     {
         // Here we actually need to get the component from timer to detect if the timer is finished 
         // Where if timer == 0, then we will add 2 exp
-        if (Input.anyKey)
-        {
-            experience += 2;
-            levelUpBar.value = experience;
-            Fill.color = Color.Lerp(lowExperienceColor, highExperienceColor, (float)levelUpBar.value/experienceNeededtoLevelUp);
-        }
+        levelUpBar.value = Global_Value.expValue;
+        Fill.color = Color.Lerp(lowExperienceColor, highExperienceColor, (float)levelUpBar.value/experienceNeededtoLevelUp);
+        
 
         // If the the player's exp have reached its max value, then allow player to level up
         if (levelUpBar.value >= levelUpBar.maxValue)
@@ -53,15 +47,15 @@ public class Level_up : MonoBehaviour
     void IncreaseLevel()
     {
         // Reset exp back to zero
-        experience = 0;
-        levelUpBar.value = experience;
+        Global_Value.expValue = 0;
+        levelUpBar.value = Global_Value.expValue;
 
         // Difficulty of leveling up will be an increment of this value 
         experienceNeededtoLevelUp += 10;
         levelUpBar.maxValue = experienceNeededtoLevelUp;
 
         // Increase level by 1
-        level += 1;
-        currentLevel.text = "Lvl : " + level.ToString();
+        Global_Value.lvlValue += 1;
+        currentLevel.text = "" + Global_Value.lvlValue.ToString();
     }
 }
