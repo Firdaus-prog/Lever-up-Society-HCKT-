@@ -7,26 +7,22 @@ public class ObjectPlacementController : MonoBehaviour
     // Start is called before the first frame update
 
     //[SerializeField]
-    public GameObject placeableLamp;
-    public GameObject placeableBed;
-    public GameObject placeableDresser;
-    public GameObject placeableClock;
+    public GameObject placeableLamp, placeableBed, placeableDresser, placeableToilet, placebleSink, placebalNightStand;
+    public int priceLamp = 50;
+    public int priceBed = 200;
+    public int priceDresser = 180;
+    public int priceToilet = 80;
+    public int priceSink = 80;
+    public int priceNightStand = 150;
+    
 
-    //[SerializeField]
-    public KeyCode LampObjectHotKey = KeyCode.G;
-    [SerializeField]
-    private KeyCode BedObjectHotKey = KeyCode.H;
-    [SerializeField]
-    private KeyCode CabinetObjectHotKey = KeyCode.K;
-    [SerializeField]
-    private KeyCode ClockObjectHotKey = KeyCode.L;
 
     private GameObject currentPlaceableObject;
 
     private float mouseWheelRotation;
     void Update()
     {
-        HandleNewObjectHotKey();
+        //HandleNewObjectHotKey();
 
         if (currentPlaceableObject != null)
         {
@@ -36,6 +32,7 @@ public class ObjectPlacementController : MonoBehaviour
         }
     }
 
+    /*
     private void HandleNewObjectHotKey()
     {
         if (Input.GetKeyDown(LampObjectHotKey))
@@ -82,10 +79,11 @@ public class ObjectPlacementController : MonoBehaviour
             }
             else
             {
-                currentPlaceableObject = Instantiate(placeableClock);
+                currentPlaceableObject = Instantiate(placeableToilet);
             }
         }
     }
+    */
 
     private void MoveCurrentObjectToMouse()
     {
@@ -115,4 +113,95 @@ public class ObjectPlacementController : MonoBehaviour
             currentPlaceableObject = null;
         }
     }
+
+    public void BuyLamp()
+    {
+        if (Global_Value.moneyValue >= priceLamp)
+        {
+            if (currentPlaceableObject != null)
+            {
+                Destroy(currentPlaceableObject);
+            }
+            
+            currentPlaceableObject = Instantiate(placeableLamp);
+            Global_Value.moneyValue -= priceLamp;
+            
+        }
+    }
+
+    public void BuyBed()
+    {
+        if (Global_Value.moneyValue >= priceBed)
+        {
+            if (currentPlaceableObject != null)
+            {
+                Destroy(currentPlaceableObject);
+            }
+            
+            currentPlaceableObject = Instantiate(placeableBed);
+            Global_Value.moneyValue -= priceBed;
+            
+        }
+    }
+
+    public void BuyDresser()
+    {
+        if (Global_Value.moneyValue >= priceDresser)
+        {
+            if (currentPlaceableObject != null)
+            {
+                Destroy(currentPlaceableObject);
+            }
+            
+            currentPlaceableObject = Instantiate(placeableDresser);
+            Global_Value.moneyValue -= priceDresser;
+            
+        }
+    }
+
+    public void BuyToilet()
+    {
+        if (Global_Value.moneyValue >= priceToilet)
+        {
+            if (currentPlaceableObject != null)
+            {
+                Destroy(currentPlaceableObject);
+            }
+            
+            currentPlaceableObject = Instantiate(placeableToilet);
+            Global_Value.moneyValue -= priceToilet;
+            
+        }
+    }
+
+    public void BuySink()
+    {
+        if (Global_Value.moneyValue >= priceSink)
+        {
+            if (currentPlaceableObject != null)
+            {
+                Destroy(currentPlaceableObject);
+            }
+            
+            currentPlaceableObject = Instantiate(placebleSink);
+            Global_Value.moneyValue -= priceSink;
+            
+        }
+    }
+
+    public void BuyNightStand()
+    {
+        if (Global_Value.moneyValue >= priceNightStand)
+        {
+            if (currentPlaceableObject != null)
+            {
+                Destroy(currentPlaceableObject);
+            }
+            
+            currentPlaceableObject = Instantiate(placebalNightStand);
+            Global_Value.moneyValue -= priceNightStand;
+            
+        }
+    }
+
 }
