@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Smurf_punya/Scenes/Timer.unity
     guid: 47221eec21b00614c830a583f92be02c
+  - enabled: 1
+    path: Assets/Khalid_punya/Khalid_Scene/TwitterSimulation.unity
+    guid: b6ac7077a3fdea04b83613f058bc6486
   m_configObjects: {}
