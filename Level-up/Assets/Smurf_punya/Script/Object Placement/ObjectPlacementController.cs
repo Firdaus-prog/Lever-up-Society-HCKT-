@@ -6,11 +6,20 @@ public class ObjectPlacementController : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    [SerializeField]
-    private GameObject placeableObjectPrefab;
+    //[SerializeField]
+    public GameObject placeableLamp;
+    public GameObject placeableBed;
+    public GameObject placeableDresser;
+    public GameObject placeableClock;
 
+    //[SerializeField]
+    public KeyCode LampObjectHotKey = KeyCode.G;
     [SerializeField]
-    private KeyCode newObjectHotKey = KeyCode.A;
+    private KeyCode BedObjectHotKey = KeyCode.H;
+    [SerializeField]
+    private KeyCode CabinetObjectHotKey = KeyCode.K;
+    [SerializeField]
+    private KeyCode ClockObjectHotKey = KeyCode.L;
 
     private GameObject currentPlaceableObject;
 
@@ -29,7 +38,7 @@ public class ObjectPlacementController : MonoBehaviour
 
     private void HandleNewObjectHotKey()
     {
-        if (Input.GetKeyDown(newObjectHotKey))
+        if (Input.GetKeyDown(LampObjectHotKey))
         {
             if (currentPlaceableObject != null)
             {
@@ -37,7 +46,43 @@ public class ObjectPlacementController : MonoBehaviour
             }
             else
             {
-                currentPlaceableObject = Instantiate(placeableObjectPrefab);
+                currentPlaceableObject = Instantiate(placeableLamp);
+            }
+        }
+
+        else if (Input.GetKeyDown(BedObjectHotKey))
+        {
+            if (currentPlaceableObject != null)
+            {
+                Destroy(currentPlaceableObject);
+            }
+            else
+            {
+                currentPlaceableObject = Instantiate(placeableBed);
+            }
+        }
+
+        else if (Input.GetKeyDown(CabinetObjectHotKey))
+        {
+            if (currentPlaceableObject != null)
+            {
+                Destroy(currentPlaceableObject);
+            }
+            else
+            {
+                currentPlaceableObject = Instantiate(placeableDresser);
+            }
+        }
+
+        else if (Input.GetKeyDown(ClockObjectHotKey))
+        {
+            if (currentPlaceableObject != null)
+            {
+                Destroy(currentPlaceableObject);
+            }
+            else
+            {
+                currentPlaceableObject = Instantiate(placeableClock);
             }
         }
     }
