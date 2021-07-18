@@ -94,6 +94,8 @@ public class ObjectPlacementController : MonoBehaviour
         {
             currentPlaceableObject.transform.position = hitInfo.point;
             currentPlaceableObject.transform.rotation = Quaternion.FromToRotation(Vector3.up, hitInfo.normal);
+            Debug.DrawRay(transform.position, transform.forward, Color.green);
+            print("Hit");
         }
     }
 
