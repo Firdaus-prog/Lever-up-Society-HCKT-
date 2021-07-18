@@ -28,7 +28,7 @@ public class Level_up : MonoBehaviour
         levelUpBar.value = experience;
         levelUpBar.maxValue = experienceNeededtoLevelUp;
 
-        currentLevel.text = "Level : 0";
+        currentLevel.text = "Lvl : 1";
     }
 
     // Update is called once per frame
@@ -62,6 +62,6 @@ public class Level_up : MonoBehaviour
 
         // Increase level by 1
         level += 1;
-        currentLevel.text = "Level : " + level.ToString();
+        currentLevel.text = "Lvl : " + level.ToString();
     }
 }
