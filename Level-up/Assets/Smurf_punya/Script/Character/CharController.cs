@@ -8,6 +8,8 @@ public class CharController : MonoBehaviour
     [SerializeField]
     float moveSpeed = 20f;
     public GameObject mainChar;
+    public AudioSource walkSound;
+    public bool makeSound = true;
 
     Vector3 forward, right;
     void Start()
@@ -24,11 +26,21 @@ public class CharController : MonoBehaviour
         if(Input.anyKey)
         {
             Move();
+            if(makeSound || !walkSound.isPlaying)
+            {
+                walkSound.Play();
+                makeSound = false;
+            }
             mainChar.GetComponent<Animation>().Play("Run");
         }
         else
         {
             mainChar.GetComponent<Animation>().Play("Idle");
+                if(!makeSound)
+            {
+                walkSound.Stop();
+                makeSound = true;
+            }
         }
     }
 
