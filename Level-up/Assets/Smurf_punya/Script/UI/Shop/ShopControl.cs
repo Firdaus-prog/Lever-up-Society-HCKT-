@@ -5,6 +5,7 @@ using UnityEngine;
 public class ShopControl : MonoBehaviour
 {
     public GameObject shopMenu;
+    public AudioSource slideSfx;
 
     public void SlideShop()
     {
@@ -12,7 +13,7 @@ public class ShopControl : MonoBehaviour
         {
             Animator animator = shopMenu.GetComponent<Animator>();
             if(animator != null)
-            {
+            {   slideSfx.Play();
                 bool isOpen = animator.GetBool("show");
                 animator.SetBool("show", !isOpen);
             }
