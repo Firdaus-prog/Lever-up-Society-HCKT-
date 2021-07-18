@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class WarningTimer : MonoBehaviour
 {
     public float timeValue = 90;
     public float timetoWait = 5;
+    public float returnTimeToRoom = 3;
     public Text timeText;
     public GameObject Panel;
     void Start()
@@ -17,7 +19,7 @@ public class WarningTimer : MonoBehaviour
     void Update()
     {
         timetoWait -= Time.deltaTime;
-        Debug.Log(timetoWait);
+        //Debug.Log(timetoWait);
 
         if (timetoWait < 0)
         {
@@ -30,6 +32,17 @@ public class WarningTimer : MonoBehaviour
             else
             {
                 timeValue = 0;
+
+                if (returnTimeToRoom > 0)
+                {
+                    returnTimeToRoom -= Time.deltaTime;
+                    Debug.Log(returnTimeToRoom);
+                }
+                else if (returnTimeToRoom < 0)
+                {
+                    returnTimeToRoom = 0;
+                    SceneManager.LoadScene(1);
+                }
             }
 
             DisplayTime(timeValue);
