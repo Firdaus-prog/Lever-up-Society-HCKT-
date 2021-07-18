@@ -20,12 +20,12 @@ public class Level_up : MonoBehaviour
         // Initialize the level and experience value
 
         // You will need 10 exp to level up to the next Level (in this case)
-        experienceNeededtoLevelUp = 10;
+        experienceNeededtoLevelUp = 100;
 
         levelUpBar.value = Global_Value.expValue;
         levelUpBar.maxValue = experienceNeededtoLevelUp;
 
-        currentLevel.text = "1";
+        currentLevel.text = Global_Value.lvlValue.ToString();
     }
 
     // Update is called once per frame
@@ -33,12 +33,9 @@ public class Level_up : MonoBehaviour
     {
         // Here we actually need to get the component from timer to detect if the timer is finished 
         // Where if timer == 0, then we will add 2 exp
-        if (Input.anyKey)
-        {
-            Global_Value.expValue += 2;
-            levelUpBar.value = Global_Value.expValue;
-            Fill.color = Color.Lerp(lowExperienceColor, highExperienceColor, (float)levelUpBar.value/experienceNeededtoLevelUp);
-        }
+        levelUpBar.value = Global_Value.expValue;
+        Fill.color = Color.Lerp(lowExperienceColor, highExperienceColor, (float)levelUpBar.value/experienceNeededtoLevelUp);
+        
 
         // If the the player's exp have reached its max value, then allow player to level up
         if (levelUpBar.value >= levelUpBar.maxValue)
