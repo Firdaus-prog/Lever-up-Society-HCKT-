@@ -10,9 +10,6 @@ public class SchedulePlanner : MonoBehaviour
     [SerializeField]
     private GameObject placeableSchedulePanel;
 
-    [SerializeField]
-    private KeyCode newObjectHotKey = KeyCode.Mouse1;
-
     private GameObject currentPlaceablePanel;
 
     void Update()
